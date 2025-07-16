@@ -1,0 +1,79 @@
+# 🔗 URL Shortener Web App
+
+A fully functional, client-side URL Shortener built using **React.js** and styled with **Material UI**, developed as part of a Campus Hiring Evaluation.
+
+## 🚀 Features
+
+- Shorten up to **5 URLs** at once
+- Provide optional:
+  - Custom **shortcodes**
+  - **Validity** (in minutes)
+- Automatic shortcode generation
+- Redirect handler using React Router
+- **URL click tracking** (timestamp, referrer, dummy location)
+- Expiry logic — default is 30 minutes
+- **Statistics page** to view:
+  - All shortened URLs
+  - Creation & expiry timestamps
+  - Total clicks
+  - Individual click logs
+- **Reusable Logging Middleware** that logs all key app events to a remote server
+
+---
+
+## 🖼️ Screenshots
+
+> 📷 Include your 2 screenshots below this section:
+
+- **Screenshot 1**: URL Shortener Page (showing form & shortened links)
+<img width="1911" height="915" alt="Screenshot 2025-07-16 154441" src="https://github.com/user-attachments/assets/c59e5fe6-f9b3-4217-b52d-c2c31b2861d1" />
+
+- **Screenshot 2**: Statistics Page (showing click logs & analytics)
+<img width="1919" height="912" alt="Screenshot 2025-07-16 154710" src="https://github.com/user-attachments/assets/c589e188-773a-4cbd-b2d9-345f3279a89a" />
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js
+- **Styling**: Material UI
+- **Routing**: React Router DOM
+- **State**: useState + localStorage
+- **Middleware**: Custom logging system (API: `http://20.244.56.144/evaluation-service/logs`)
+
+---
+
+## 🔧 Setup & Run Locally
+
+```bash
+git clone https://github.com/MukeshVelmurugan/212222230086.git
+cd 212222230086/frontend-test-submission
+npm install
+npm run dev
+
+```
+```bash
+Runs at: http://localhost:3000
+```
+## 📦 Logging Middleware Example
+
+```bash
+log("frontend", "info", "page", "Redirecting to original URL");
+```
+
+### Sends a POST request to:
+
+```bash
+POST http://20.244.56.144/evaluation-service/logs
+```
+### ✅ Evaluation Requirements Covered
+
+- ✅ **30-minute default expiry**: If the user doesn't specify a validity period, the link expires in 30 minutes.
+- ✅ **Optional custom shortcode**: Users can provide their own alphanumeric code for the shortened URL.
+- ✅ **Shorten 5 URLs at once**: Form dynamically supports up to 5 concurrent URL shortening requests.
+- ✅ **Click tracking and stats**: Tracks each click with timestamp, referrer, and simulated location data.
+- ✅ **Remote logging middleware**: All critical user actions and states are logged to a protected remote API endpoint.
+- ✅ **Material UI only (no external CSS libraries)**: UI is built entirely using Material UI components and theming.
+- ✅ **Full client-side routing & redirection**: Redirection from short URLs is handled entirely via React Router DOM.
+
+
